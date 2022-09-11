@@ -1,0 +1,238 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: -webkit-fill-available;
+    /* scroll-behavior: smooth; */
+}
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+.transition {
+    transition: 1s;
+}
+
+:root {
+    --blue: #0d6efd;
+    --blue-100: #CFE2FF;
+    --blue-200: #9EC5FE;
+    --blue-300: #6EA8FE;
+    --blue-400: #6EA8FE;
+    --blue-500: #3D8BFD;
+    --blue-600: #0A58CA;
+    --blue-700: #084298;
+    --blue-800: #052c65;
+    --blue-900: #031633;
+
+    --grey: #adb5bd;
+    --grey-100: #f8f9fa;
+    --grey-200: #e9ecef;
+    --grey-300: #dee2e6;
+    --grey-400: #ced4da;
+    --grey-500: #adb5bd;
+    --grey-600: #6c757d;
+    --grey-700: #495057;
+    --grey-800: #343A40;
+    --grey-900: #212529;
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.bg-blue-100 {
+    background-color: var(--blue-100);
+}
+
+.bg-blue-200 {
+    background-color: var(--blue-200);
+}
+
+.bg-blue-300 {
+    background-color: var(--blue-300);
+}
+
+.bg-blue-400 {
+    background-color: var(--blue-400);
+}
+
+.bg-blue-500 {
+    background-color: var(--blue-500);
+}
+
+.bg-blue-600 {
+    background-color: var(--blue-600);
+}
+
+.bg-blue-700 {
+    background-color: var(--blue-700);
+}
+
+.bg-blue-800 {
+    background-color: var(--blue-800);
+}
+
+.bg-blue-900 {
+    background-color: var(--blue-900);
+}
+
+.bg-grey {
+    background-color: var(--grey);
+}
+
+.bg-grey-100 {
+    background-color: var(--grey-100);
+}
+
+.bg-grey-200 {
+    background-color: var(--grey-200);
+}
+
+.bg-grey-300 {
+    background-color: var(--grey-300);
+}
+
+.bg-grey-400 {
+    background-color: var(--grey-400);
+}
+
+.bg-grey-500 {
+    background-color: var(--grey-500);
+}
+
+.bg-grey-600 {
+    background-color: var(--grey-600);
+}
+
+.bg-grey-700 {
+    background-color: var(--grey-700);
+}
+
+.bg-grey-800 {
+    background-color: var(--grey-800);
+}
+
+.bg-grey-900 {
+    background-color: var(--grey-900);
+}
+
+#togglerDekstopIcon {
+    display: block;
+}
+
+#togglerMobileIcon {
+    display: none;
+}
+
+/* Responsive For Mobile */
+@media screen and (max-width: 468px){
+    .name-display {
+        display: none;
+    }
+
+    .sidebar {
+        min-height: 91.5vh;
+        width: 300px !important;
+        /* margin-left: -300px !important; */
+
+        /* Agar Sidebar Tidak Merusak Konten */
+        position: fixed;
+        z-index: 49;
+        transition: 0.5s;
+    }
+
+    #togglerDekstopIcon {
+        display: none;
+    }
+
+    #togglerMobileIcon {
+        display: block;
+    }
+}
+
+/* Responsive For Ipad */
+@media screen and (max-width: 868px) {
+    .sidebar {
+        min-height: 91.5vh;
+        width: 300px !important;
+        margin-left: -300px !important;
+
+        /* Agar Sidebar Tidak Merusak Konten */
+        position: fixed;
+        z-index: 49;
+        transition: 0.5s;
+    }
+
+    #togglerDekstopIcon {
+        display: none;
+    }
+
+    #togglerMobileIcon {
+        display: block;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px !important;
+    min-height: 91.2vh;
+    transition: 0.5s;
+}
+
+.sidebar-toggled {
+    margin-left: -280px !important;
+    min-height: 91.2vh;
+}
+
+.sidebar-toggled-responsive {
+    margin-left: 0px !important;
+}
+
+.sidebar-title {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.sidebar-sub-title {
+    color: gray;
+}
+
+/* Button */
+.btn-scroll {
+	position:fixed;
+	left:90%;
+	bottom: 100px;
+	display:none;
+}
+
+.btn-hover:hover {
+    background-color: #C6C6C6;
+}
+
+.btn-active:active {
+    background-color: black;
+    color: white;
+}
+
+/* Wrapper */
+.wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    margin: 15px;
+    margin-bottom: 100px;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

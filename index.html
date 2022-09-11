@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="img/pp.jpg">
+
+    <title>Dashboard V0.3</title>
+
+    <!-- Style Bootstrap/Plugin -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="bs5/bootstrap.css">
+    <script src="bs5/bootstrap.bundle.min.js"></script>
+    <script src="bs5/jquery.min.js"></script>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="bs5/animate.css">
+    <link rel="stylesheet" href="assetdb/dashboard.css">
+    <link rel="stylesheet" href="assetdb/darkmode/darkmode.css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="icon6/all.css">
+    <script src="icon6/all.js"></script>
+    
+</head>
+
+<body class="bg-grey-300 grey-300_body-bg-darkmode">
+    <nav class="navbar navbar-expand-sm bg-blue-500 blue-500_bg-darkmode navbar-white border-bottom border-light border-opacity-25 sticky-top">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)" id="toggler">
+                        <i class="fa-solid fa-xmark fs-3 text-white" id="togglerDekstopIcon"></i>
+                        <i class="fa-solid fa-bars fs-3 text-white" id="togglerMobileIcon"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="d-flex ms-auto">
+                <div class="me-3">
+                    <a class="nav-link text-dark" href="javascript:void(0);" id="darkmodeToggle">
+                        <i class="fa-solid fa-moon fs-3 text-warning" id="icon-darkmode"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <div class="dropdown">
+                        <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">
+                            <img src="img/pp.jpg" class="rounded-circle me-2" width="25">
+                            <span class="name-display text-white">Apip Rahman Syahidan</span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end animate__animated animate__fadeIn animate__faster bg-darkmode p-2">
+                            <li class="">
+                                <a class="dropdown-item btn btn-darkmode rounded-0 mb-2" href="{{ route('usersetting') }}">
+                                    <i class="fa-solid fa-gear me-2"></i> Setting
+                                </a>
+                            </li>
+                            <li class="">
+                                <a class="dropdown-item btn btn-darkmode rounded-0" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                                    <i class="fa-solid fa-sign-in-alt me-2"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="d-flex">
+        <div class="sidebar bg-dm-1 border-end border-light border-opacity-25 shadow-sm" id="sidebar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <h4 class="sidebar-title text-white">Dashboard V0.3</h4>
+                </li>
+                <hr class="border-white">
+                <li class="nav-item p-2">
+                    <span class="sidebar-sub-title"><i class="fa-solid fa-pager"></i> Pages</span>
+                </li>
+                <li class="nav-item p-2">
+                    <a href="#" class="button-dm text-start w-100">
+                        <i class="fa-solid fa-gauge me-2"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item p-2">
+                    <a href="#" class="button-dm text-start w-100">
+                        <i class="fa-solid fa-code me-2"></i> Snippets
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="wrapper flex-fill">
+            <div class="content-wrapper">
+                <div class="alert alert-warning">
+                    <strong>Warning!</strong> Dikarenakan dashboard ini masih static, maka ada beberapa fungsi yang tidak berjalan! Gunakan Framework laravel untuk menjalankan beberapa fitur!
+                </div>
+                <div class="alert alert-warning">
+                    <strong>Warning!</strong> Because this dashboard is still static, some functions are not working! Use Laravel Framework to run some features!
+                </div>
+                <div class="card mx-auto mb-3 dark_bg-darkmode shadow-sm border-0">
+                    <div class="card-header bg-primary p-1"></div>
+                    <div class="card-body text-darkmode">
+                        Content
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4 m-1">
+                            <div class="card mx-auto dark_bg-darkmode border-0">
+                                <div class="card-header bg-success p-1"></div>
+                                <div class="card-body">
+                                    <a class="btn btn-light light_btn-darkmode w-100 text-start mb-2" id="btnProfileInformation">
+                                        <i class="fa-solid fa-user me-3"></i> Profile Information
+                                    </a>
+                
+                                    <a class="btn btn-light light_btn-darkmode w-100 text-start mb-2" id="btnAccountSetting">
+                                        <i class="fa-solid fa-users me-3"></i> Account Setting
+                                    </a>
+                
+                                    <a class="btn btn-light light_btn-darkmode w-100 text-start mb-2" id="btnSecuritySetting">
+                                        <i class="fa-solid fa-shield me-3"></i> Security
+                                    </a>
+                
+                                    <a class="btn btn-light light_btn-darkmode w-100 text-start mb-2" id="btnPreferences">
+                                        <i class="fa-solid fa-gears me-3"></i> Preferences
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-7 m-1">
+                            <!-- {{-- Profile Information Setting --}} -->
+                            <div class="card bg-darkmode border-0" id="profileInformationContainer">
+                                <div class="card-header bg-info p-1 border-0"></div>
+                                <div class="card-body text-darkmode">
+                                    <div class="mb-3">
+                                        <label for="">Name</label>
+                                        <input type="text" id="name" class="form-control input-darkmode mt-3" value="Apip Rahman Syahidan">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="">Email</label>
+                                        <input type="text" id="email" class="form-control input-darkmode mt-3" value="apipskaxx@gmail.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="">Bio</label>
+                                        <textarea id="bio" rows="7" class="form-control input-darkmode mt-3">Menjadi Baik adalah sebuah tujuan.</textarea>
+                                    </div>
+                
+                                    <button class="btn btn-primary btn-sm rounded-0" id="saveProfile">Save</button>
+                                </div>
+                            </div>
+                
+                            <!-- {{-- Account Setting --}} -->
+                            <div class="card d-none dark_bg-darkmode border-0" id="accountContainer">
+                                <div class="card-header bg-danger p-1 border-0"></div>
+                                <div class="card-body">
+                                    <p class="text-danger">Delete Account</p>
+                
+                                    <p class="text-darkmode">
+                                        Jika anda menghapus akun anda, maka akun anda tidak akan kembali lagi, 
+                                        <br>
+                                        karena penghapusan ini bersifat permanen.
+                                    </p>
+                
+                                    <div class="form-floating mb-3 grey-500_text-darkmode">
+                                        <input type="text" class="form-control input-darkmode" id="email" placeholder="Email">
+                                        <label for="email">Email</label>
+                                    </div>
+                
+                                    <button class="btn btn-danger rounded-0" id="deleteAccount">Delete Account</button>
+                                </div>
+                            </div>
+                
+                            <!-- {{-- Security Setting --}} -->
+                            <div class="card d-none bg-darkmode border-0" id="securityContainer">
+                                <div class="card-header bg-primary p-1 border-0"></div>
+                                <div class="card-body text-darkmode">
+                                    <p>Change Password</p>
+                
+                                    <div class="form-floating mt-3 mb-3 grey-500_text-darkmode">
+                                        <input type="text" class="form-control input-darkmode" id="password" placeholder="Password">
+                                        <label for="password">Password</label>
+                                    </div>
+                                    <div class="form-floating mt-3 mb-3 grey-500_text-darkmode">
+                                        <input type="text" class="form-control input-darkmode" id="confirm_password" placeholder="Confirm Password">
+                                        <label for="confirm_password">Confirm Password</label>
+                                    </div>
+                
+                                    <button class="btn btn-primary rounded-0" id="changePassword">Change Password</button>
+                                </div>
+                            </div>
+                
+                            <!-- {{-- Preferences Setting --}} -->
+                            <div class="card d-none bg-darkmode border-0" id="preferencesContainer">
+                                <div class="card-header bg-warning p-1 border-0"></div>
+                                <div class="card-body text-darkmode">
+                                    <p>Preferences Settings</p>
+                                    <hr>
+                                    <div class="d-flex">
+                                        <p>Aktifkan Transisi </p>
+                                        <button class="btn btn-primary btn-sm ms-auto rounded-0 align-self-start" id="btnTransisiSet">Aktifkan</button>
+                                    </div>
+                                    <small class="grey-500_text-darkmode">Ketika anda mengganti tema maka akan ada transisi selama 1 detik.</small>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+
+            <footer class="footer">
+                <div class="bg-white white_bg-darkmode p-3">
+                    <span class="text-secondary">Dashboard V0.3</span>
+                </div>
+            </footer>
+
+            <button class="btn btn-info btn-scroll" id="btnScrollTop">
+                <i class="fa-solid fa-chevron-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="container">
+        <!-- Logout -->
+        <div class="modal modal-alert py-5 animate__animated animate__bounceIn" style="margin-top: 180px;" id="logoutModal">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-4 shadow bg-darkmode text-darkmode">
+                    <div class="modal-body p-4 text-center">
+                        <h5 class="mb-0">Apakah anda yakin ingin logout ?</h5>
+                        <p class="mb-0"></p>
+                    </div>
+                    <div class="modal-footer flex-nowrap p-0">
+                        <a href="#" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right"><strong>Ya</strong></a>
+                        <a href="javascript:void(0);" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0" data-bs-dismiss="modal">Tidak</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Main JS Dashboard -->
+<script src="assetdb/darkmode/darkmode.js"></script>
+<script src="assetdb/main.js"></script>
+</html>
