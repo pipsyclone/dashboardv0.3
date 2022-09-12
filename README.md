@@ -24,4 +24,4 @@
     - Fontawesome
 </pre>
 
-<b>NOTE : Saya menggunakan Framework Laravel 9</b>
+<b>NOTE : Saya menggunakan Framework Laravel 9, jika ingin mendownload untuk laravel nya silahkan cek pada bagian release</b>
