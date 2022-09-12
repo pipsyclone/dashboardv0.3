@@ -13,10 +13,6 @@ body {
     min-height: -webkit-fill-available;
 }
 
-.transition {
-    transition: 1s;
-}
-
 :root {
     --blue: #0d6efd;
     --blue-100: #CFE2FF;
@@ -135,17 +131,6 @@ body {
         display: none;
     }
 
-    .sidebar {
-        min-height: 91.5vh;
-        width: 300px !important;
-        /* margin-left: -300px !important; */
-
-        /* Agar Sidebar Tidak Merusak Konten */
-        position: fixed;
-        z-index: 49;
-        transition: 0.5s;
-    }
-
     #togglerDekstopIcon {
         display: none;
     }
@@ -155,17 +140,15 @@ body {
     }
 }
 
-/* Responsive For Ipad */
+/* Responsive For Mobile & Ipad */
 @media screen and (max-width: 868px) {
     .sidebar {
-        min-height: 91.5vh;
         width: 300px !important;
         margin-left: -300px !important;
 
         /* Agar Sidebar Tidak Merusak Konten */
-        position: fixed;
-        z-index: 49;
-        transition: 0.5s;
+        position: absolute;
+        z-index: 1;
     }
 
     #togglerDekstopIcon {
@@ -180,13 +163,12 @@ body {
 /* Sidebar */
 .sidebar {
     width: 280px !important;
-    min-height: 91.2vh;
+    min-height: 100vh;
     transition: 0.5s;
 }
 
 .sidebar-toggled {
     margin-left: -280px !important;
-    min-height: 91.2vh;
 }
 
 .sidebar-toggled-responsive {
@@ -210,15 +192,6 @@ body {
 	display:none;
 }
 
-.btn-hover:hover {
-    background-color: #C6C6C6;
-}
-
-.btn-active:active {
-    background-color: black;
-    color: white;
-}
-
 /* Wrapper */
 .wrapper {
     position: relative;
@@ -235,4 +208,9 @@ body {
     position: absolute;
     width: 100%;
     bottom: 0;
+}
+
+/* For Setting Preferences */
+.transition {
+    transition: 1s;
 }
